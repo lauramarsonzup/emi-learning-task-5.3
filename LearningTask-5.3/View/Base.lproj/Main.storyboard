@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Contador View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LearningTask_5_3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ContadorViewController" customModule="LearningTask_5_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,12 +44,18 @@
                                                         <color key="tintColor" systemColor="secondaryLabelColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system" buttonSize="large"/>
+                                                        <connections>
+                                                            <action selector="botaoDecrementarPressionado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xEi-dE-NyJ"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S53-td-vfN" userLabel="Aumentar Button">
                                                         <rect key="frame" x="191" y="0.0" width="159" height="50"/>
                                                         <color key="tintColor" systemColor="secondaryLabelColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" buttonSize="large"/>
+                                                        <connections>
+                                                            <action selector="botaoIncrementarPressionado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y9x-h8-2em"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -64,8 +70,11 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Reset">
                                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="botaoResetarPressionado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m4r-md-cF8"/>
+                                                </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Sn7-du-xuN" userLabel="Padrao de Incrmeento Stack View">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Sn7-du-xuN" userLabel="Padrao de Incremento Stack View">
                                                 <rect key="frame" x="256" y="0.0" width="94" height="112"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="padrão de incremento" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8G-w8-0ck" userLabel="Titulo Label">
@@ -82,6 +91,9 @@
                                                     </label>
                                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="igy-Ij-sTI">
                                                         <rect key="frame" x="0.0" y="80" width="94" height="32"/>
+                                                        <connections>
+                                                            <action selector="alterarPadraoDeIncrementoPressionado:" destination="BYZ-38-t0r" eventType="valueChanged" id="qS5-Py-Fyx"/>
+                                                        </connections>
                                                     </stepper>
                                                 </subviews>
                                             </stackView>
@@ -100,6 +112,11 @@
                             <constraint firstItem="odS-of-kKi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z6x-Jd-QSp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="valorDeIncrementoLabel" destination="P5g-Gf-hft" id="ouy-MG-3Jl"/>
+                        <outlet property="valorDoContadorLabel" destination="rDZ-TD-G6M" id="SDR-RB-iJW"/>
+                        <outlet property="viewPrincipal" destination="8bC-Xf-vdC" id="Yrj-aA-Jxm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
